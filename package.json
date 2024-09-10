@@ -1,0 +1,16 @@
+{
+  "name": "tp-tallerdeprogramacion2",
+  "version": "1.0.0",
+  "description": "TP - Primer servidor NODE.JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ../TP-TallerDeProgramacion2/index.js",
+    "watch": "node --watch ../TP-TallerDeProgramacion2/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js"
+  ],
+  "author": "Axel Chaikh",
+  "license": "ISC"
+}
