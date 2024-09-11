@@ -15,6 +15,16 @@ function crearNuevoArray(condicion) {
         const miArray = [2, 10, "a", 4, "b", 6, "d", true, "e", 9, 1, "z", 12, "r", "c", false];
         let newArray = [];
 
+        for (let i = 0; i < miArray.length; i++) {
+            for (let j = i + 1; j < nArray.length; j++) {
+                if (miArray[i] === miArray[j]) {
+                    miArray.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+
+
         if (condicionXParam === "string") {
             newArray = eliminarRepetidos(miArray.filter((v) => typeof (v) === condicion)).sort();
         }else {
@@ -25,21 +35,6 @@ function crearNuevoArray(condicion) {
         const leerArchivo = fs.readFileSync('resultado.txt', "utf-8")
         return console.log("El resultado es: ", leerArchivo);
     }
-}
-
-
-const eliminarRepetidos = (nArray) => {
-
-        for (let i = 0; i < nArray.length; i++) {
-            for (let j = i + 1; j < nArray.length; j++) {
-                    if (nArray[i] === nArray[j]) {
-                    nArray.splice(j, 1);
-                    j--;
-                }
-            }
-        }
-
-    return nArray
 }
 
 
