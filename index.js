@@ -12,11 +12,11 @@ function crearNuevoArray(condicion) {
         throw new Error("La condicion no existe");
     }else {
 
-        const miArray = [2, 10, "a", 4, "b", 6, "d", true, "e", 9, 1, "z", 12, "r", "c", false];
+        const miArray = [2, 10, "a", 4, "b", 6, "d", true, "e", 9, 1, "z", 12, "r", "c", false,2];
         let newArray = [];
 
         for (let i = 0; i < miArray.length; i++) {
-            for (let j = i + 1; j < nArray.length; j++) {
+            for (let j = i + 1; j < miArray.length; j++) {
                 if (miArray[i] === miArray[j]) {
                     miArray.splice(j, 1);
                     j--;
@@ -26,9 +26,9 @@ function crearNuevoArray(condicion) {
 
 
         if (condicionXParam === "string") {
-            newArray = eliminarRepetidos(miArray.filter((v) => typeof (v) === condicion)).sort();
+            newArray = miArray.filter((v) => typeof (v) === condicion).sort();
         }else {
-            newArray = eliminarRepetidos(miArray.filter((v) => typeof (v) === condicion)).sort((a,b)=>a-b);
+            newArray = miArray.filter((v) => typeof (v) === condicion).sort((a,b)=>a-b);
         }
 
         const Archivo = fs.writeFileSync('resultado.txt', newArray.toString() ,'utf8');
@@ -38,7 +38,7 @@ function crearNuevoArray(condicion) {
 }
 
 
-const condicion1 = "string";
+const condicion1 = "number" ;
 
 try {
     crearNuevoArray(condicion1)
